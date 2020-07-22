@@ -10,11 +10,9 @@ if (is_numeric($_POST['n1']) && is_numeric($_POST['n2'])) {
 switch ($operacao) {
     case 'Soma':
         echo 'A soma de ' . $n1 . ' e ' . $n2 . ' é de ' . ($n1 + $n2);
-
         break;
     case 'Subtracao':
         echo 'A subtração de ' . $n1 . ' e ' . $n2 . ' é de ' . ($n1 - $n2);
-
         break;
     case 'Divisao':
         if ($n2 == 0) {
@@ -29,6 +27,14 @@ switch ($operacao) {
         break;
     case 'Potencia':
         echo 'O numero ' . $n1 . ' elevado a ' . $n2 . ' é igual a ' . (pow($n1, $n2));
+        break;
+    case 'Raiz_quadrada':
+        if ($n1 < 0 || $n2 < 0) {
+            echo 'Não é possivel calcular a raiz de um valor negativo.Por favor,refaça a operação';
+            break;
+        } else {
+            echo 'A raiz quadrada de ' . $n1 . ' é ' . sqrt($n1) . ' e a de ' . $n2 . ' é de ' . sqrt($n2);
+        }
         break;
     default:
         # code...
